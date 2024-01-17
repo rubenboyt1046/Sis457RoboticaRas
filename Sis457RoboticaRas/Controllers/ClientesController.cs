@@ -22,7 +22,7 @@ namespace Sis457RoboticaRas.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Clientes != null ? 
-                          View(await _context.Clientes.ToListAsync()) :
+                          View(await _context.Clientes.Where(x => x.Estado != -1).ToListAsync()) :
                           Problem("Entity set 'RoboticaRasContext.Clientes'  is null.");
         }
 
@@ -55,10 +55,13 @@ namespace Sis457RoboticaRas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,RazonSocial,CedulaIdentidad,Celular,UsuarioRegistro,FechaRegistro,Estado")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("RazonSocial,CedulaIdentidad,Celular,UsuarioRegistro,FechaRegistro,Estado")] Cliente cliente)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(cliente.RazonSocial))
             {
+                cliente.UsuarioRegistro = User.Identity?.Name;
+                cliente.FechaRegistro = DateTime.Now;
+                cliente.Estado = 1;
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,7 +90,7 @@ namespace Sis457RoboticaRas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,RazonSocial,CedulaIdentidad,Celular,UsuarioRegistro,FechaRegistro,Estado")] Cliente cliente)
+        public async Task<IActionResult> Edit(int id, [Bind("RazonSocial,CedulaIdentidad,Celular,UsuarioRegistro,FechaRegistro,Estado")] Cliente cliente)
         {
             if (id != cliente.Id)
             {
@@ -147,7 +150,9 @@ namespace Sis457RoboticaRas.Controllers
             var cliente = await _context.Clientes.FindAsync(id);
             if (cliente != null)
             {
-                _context.Clientes.Remove(cliente);
+                cliente.Estado = -1;
+                cliente.UsuarioRegistro = User.Identity?.Name ?? "";
+                //_context.Clientes.Remove(cliente);
             }
             
             await _context.SaveChangesAsync();

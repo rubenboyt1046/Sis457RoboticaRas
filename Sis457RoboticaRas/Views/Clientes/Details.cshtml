@@ -5,44 +5,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Detalles Cliente</h1>
 
-<div>
-    <h4>Cliente</h4>
+<div>   
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RazonSocial)
+            Razon Social
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.RazonSocial)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CedulaIdentidad)
+            Cedula Identidad
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CedulaIdentidad)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Celular)
+            Celular
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Celular)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioRegistro)
+            Usuario Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaRegistro)
+            Fecha Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaRegistro)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
+            Estado
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Estado)
@@ -50,6 +49,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Volver</a>
 </div>
