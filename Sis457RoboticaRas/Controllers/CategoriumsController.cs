@@ -22,7 +22,7 @@ namespace Sis457RoboticaRas.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Categoria != null ? 
-                          View(await _context.Categoria.ToListAsync()) :
+                          View(await _context.Categoria.Where(x => x.Estado != -1).ToListAsync()) :
                           Problem("Entity set 'RoboticaRasContext.Categoria'  is null.");
         }
 
@@ -55,10 +55,13 @@ namespace Sis457RoboticaRas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCategoria,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Categorium categorium)
+        public async Task<IActionResult> Create([Bind("Nombre")] Categorium categorium)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(categorium.Nombre))
             {
+                categorium.UsuarioRegistro = User.Identity?.Name;
+                categorium.FechaRegistro = DateTime.Now;
+                categorium.Estado = 1;
                 _context.Add(categorium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -147,7 +150,9 @@ namespace Sis457RoboticaRas.Controllers
             var categorium = await _context.Categoria.FindAsync(id);
             if (categorium != null)
             {
-                _context.Categoria.Remove(categorium);
+                categorium.Estado = -1;
+                categorium.UsuarioRegistro = User.Identity?.Name ?? "";
+                //_context.Categoria.Remove(categorium);
             }
             
             await _context.SaveChangesAsync();

@@ -11244,11 +11244,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ruben\\Desktop\\VeranoSis457\\Sis457RoboticaRas\\Sis457RoboticaRas\\Sis457RoboticaRas.csproj",
+      "projectUniqueName": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\Sis457RoboticaRas.csproj",
       "projectName": "Sis457RoboticaRas",
-      "projectPath": "C:\\Users\\Ruben\\Desktop\\VeranoSis457\\Sis457RoboticaRas\\Sis457RoboticaRas\\Sis457RoboticaRas.csproj",
+      "projectPath": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\Sis457RoboticaRas.csproj",
       "packagesPath": "C:\\Users\\Ruben\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ruben\\Desktop\\VeranoSis457\\Sis457RoboticaRas\\Sis457RoboticaRas\\obj\\",
+      "outputPath": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ruben\\AppData\\Roaming\\NuGet\\NuGet.Config",

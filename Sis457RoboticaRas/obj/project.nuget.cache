@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vv73xvGEqoZ2n21vVyNUUnxN8J8An9lS6FkF1GbZ67rXbT97vOTV6NHc30y8wd72H6evo4aeHeMxKo/v4w5AIA==",
+  "dgSpecHash": "aD5ZOGzg9Dq2MBh2pnufVIsyzmCjsBjWbn4OFMLV/7wqsKjrTxNxMT8IQ6ISM408Ccw6zc+tizvZUcSmKS2qSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ruben\\Desktop\\VeranoSis457\\Sis457RoboticaRas\\Sis457RoboticaRas\\Sis457RoboticaRas.csproj",
+  "projectFilePath": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\Sis457RoboticaRas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ruben\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
