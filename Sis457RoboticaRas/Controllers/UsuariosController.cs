@@ -21,7 +21,7 @@ namespace Sis457RoboticaRas.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            var roboticaRasContext = _context.Usuarios.Include(u => u.IdEmpleadoNavigation);
+            var roboticaRasContext = _context.Usuarios.Where(x => x.Estado != -1).Include(u => u.IdEmpleadoNavigation);
             return View(await roboticaRasContext.ToListAsync());
         }
 
@@ -47,7 +47,7 @@ namespace Sis457RoboticaRas.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdEmpleado"] = new SelectList(_context.Empleados, "IdEmpleado", "IdEmpleado");
+            ViewData["IdEmpleado"] = new SelectList(_context.Empleados, "IdEmpleado", "Nombre");
             return View();
         }
 
@@ -56,10 +56,14 @@ namespace Sis457RoboticaRas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUsuario,IdEmpleado,Usuario1,Clave,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("IdUsuario,IdEmpleado,Usuario1")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(usuario.Usuario1)
             {
+                usuario.Clave = Util.Encrypt("123456");
+                usuario.UsuarioRegistro = User.Identity?.Name;
+                usuario.FechaRegistro = DateTime.Now;
+                usuario.Estado = 1;
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -101,6 +105,7 @@ namespace Sis457RoboticaRas.Controllers
             {
                 try
                 {
+                    usuario.UsuarioRegistro = User.Identity?.Name;
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
@@ -152,7 +157,9 @@ namespace Sis457RoboticaRas.Controllers
             var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario != null)
             {
-                _context.Usuarios.Remove(usuario);
+                usuario.Estado = -1;
+                usuario.UsuarioRegistro = User.Identity?.Name ?? "";
+                //_context.Usuarios.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();
