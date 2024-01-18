@@ -22,7 +22,7 @@ namespace Sis457RoboticaRas.Controllers
         public async Task<IActionResult> Index()
         {
             var roboticaRasContext = _context.Productos.Include(p => p.IdCategoriaNavigation);
-            return View(await roboticaRasContext.ToListAsync());
+            return View(await roboticaRasContext.Where(x => x.Estado != -1).ToListAsync());
         }
 
         // GET: Productos/Details/5
@@ -58,8 +58,11 @@ namespace Sis457RoboticaRas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdProducto,IdCategoria,Codigo,Nombre,UrlImagen,Descripcion,Precio,UsuarioRegistro,FechaRegistro,Estado")] Producto producto)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(producto.Nombre) && producto.Precio > 0 && !string.IsNullOrEmpty(producto.Codigo) && !string.IsNullOrEmpty(producto.Descripcion))
             {
+                producto.UsuarioRegistro = User.Identity?.Name;
+                producto.FechaRegistro = DateTime.Now;
+                producto.Estado = 1;
                 _context.Add(producto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -97,10 +100,11 @@ namespace Sis457RoboticaRas.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(producto.Nombre))
             {
                 try
                 {
+                    producto.UsuarioRegistro = User.Identity?.Name;
                     _context.Update(producto);
                     await _context.SaveChangesAsync();
                 }
@@ -152,7 +156,9 @@ namespace Sis457RoboticaRas.Controllers
             var producto = await _context.Productos.FindAsync(id);
             if (producto != null)
             {
-                _context.Productos.Remove(producto);
+                producto.Estado = -1;
+                producto.UsuarioRegistro = User.Identity?.Name ?? "";
+                //_context.Productos.Remove(producto);
             }
             
             await _context.SaveChangesAsync();
