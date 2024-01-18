@@ -22,7 +22,7 @@ namespace Sis457RoboticaRas.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Empleados != null ? 
-                          View(await _context.Empleados.ToListAsync()) :
+                          View(await _context.Empleados.Where(x => x.Estado != -1).ToListAsync()) :
                           Problem("Entity set 'RoboticaRasContext.Empleados'  is null.");
         }
 
@@ -57,8 +57,11 @@ namespace Sis457RoboticaRas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdEmpleado,Nombre,Apellidos,Telefono,Cargo,Salario,UsuarioRegistro,FechaRegistro,Estado")] Empleado empleado)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(empleado.Nombre))
             {
+                empleado.UsuarioRegistro = User.Identity?.Name;
+                empleado.FechaRegistro = DateTime.Now;
+                empleado.Estado = 1;
                 _context.Add(empleado);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -94,10 +97,11 @@ namespace Sis457RoboticaRas.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(empleado.Nombre))
             {
                 try
                 {
+                    empleado.UsuarioRegistro = User.Identity?.Name;
                     _context.Update(empleado);
                     await _context.SaveChangesAsync();
                 }
@@ -147,7 +151,9 @@ namespace Sis457RoboticaRas.Controllers
             var empleado = await _context.Empleados.FindAsync(id);
             if (empleado != null)
             {
-                _context.Empleados.Remove(empleado);
+                empleado.Estado = -1;
+                empleado.UsuarioRegistro = User.Identity?.Name ?? "";
+                //_context.Empleados.Remove(empleado);
             }
             
             await _context.SaveChangesAsync();

@@ -33,7 +33,7 @@
             Estado
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
+            @(Model.Estado == 1 ? "Activo" : "Inactivo")
         </dd>
     </dl>
 </div>

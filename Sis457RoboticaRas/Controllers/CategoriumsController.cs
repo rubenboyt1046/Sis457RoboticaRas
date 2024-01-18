@@ -97,10 +97,11 @@ namespace Sis457RoboticaRas.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(categorium.Nombre))
             {
                 try
                 {
+                    categorium.UsuarioRegistro = User.Identity?.Name;
                     _context.Update(categorium);
                     await _context.SaveChangesAsync();
                 }

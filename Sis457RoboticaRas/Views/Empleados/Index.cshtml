@@ -5,37 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Empleados</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear Nuevo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                Nombre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Apellidos)
+                Apellidos
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Telefono)
+                Telefono
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cargo)
+                Cargo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Salario)
+               Salario
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
+                Usuario Registro
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaRegistro)
+                Fecha Registro
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Estado)
+                Estado
             </th>
             <th></th>
         </tr>
@@ -65,12 +65,12 @@
                 @Html.DisplayFor(modelItem => item.FechaRegistro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Estado)
+                @(item.Estado == 1 ? "Activo" : "Inactivo")
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdEmpleado">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdEmpleado">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdEmpleado">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IdEmpleado">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEmpleado">Ver</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEmpleado">Eliminar</a>
             </td>
         </tr>
 }
