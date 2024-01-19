@@ -5,16 +5,196 @@
       "PackagePath": "staticwebassets\\Sis457RoboticaRas.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\css\\style.scss",
+      "PackagePath": "staticwebassets\\css\\style.scss"
     },
     {
       "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\about-img.png",
+      "PackagePath": "staticwebassets\\images\\about-img.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\call.png",
+      "PackagePath": "staticwebassets\\images\\call.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\client.png",
+      "PackagePath": "staticwebassets\\images\\client.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\comment.png",
+      "PackagePath": "staticwebassets\\images\\comment.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\envelope.png",
+      "PackagePath": "staticwebassets\\images\\envelope.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\fb.png",
+      "PackagePath": "staticwebassets\\images\\fb.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\insta.png",
+      "PackagePath": "staticwebassets\\images\\insta.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\left-white.png",
+      "PackagePath": "staticwebassets\\images\\left-white.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\like.png",
+      "PackagePath": "staticwebassets\\images\\like.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\link.png",
+      "PackagePath": "staticwebassets\\images\\link.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\linkedin.png",
+      "PackagePath": "staticwebassets\\images\\linkedin.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\location.png",
+      "PackagePath": "staticwebassets\\images\\location.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\menu.png",
+      "PackagePath": "staticwebassets\\images\\menu.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\n-1.jpg",
+      "PackagePath": "staticwebassets\\images\\n-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\n-2.jpg",
+      "PackagePath": "staticwebassets\\images\\n-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\n-3.png",
+      "PackagePath": "staticwebassets\\images\\n-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\next.png",
+      "PackagePath": "staticwebassets\\images\\next.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\p-1.jpg",
+      "PackagePath": "staticwebassets\\images\\p-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\p-2.jpg",
+      "PackagePath": "staticwebassets\\images\\p-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\p-3.jpg",
+      "PackagePath": "staticwebassets\\images\\p-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\p-4.jpg",
+      "PackagePath": "staticwebassets\\images\\p-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\p-5.jpg",
+      "PackagePath": "staticwebassets\\images\\p-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\p-6.jpg",
+      "PackagePath": "staticwebassets\\images\\p-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\prev.png",
+      "PackagePath": "staticwebassets\\images\\prev.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s-1.png",
+      "PackagePath": "staticwebassets\\images\\s-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s-2.png",
+      "PackagePath": "staticwebassets\\images\\s-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s-3.png",
+      "PackagePath": "staticwebassets\\images\\s-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s-4.png",
+      "PackagePath": "staticwebassets\\images\\s-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s-5.png",
+      "PackagePath": "staticwebassets\\images\\s-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s1-blue.png",
+      "PackagePath": "staticwebassets\\images\\s1-blue.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s2-blue.png",
+      "PackagePath": "staticwebassets\\images\\s2-blue.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s3-blue.png",
+      "PackagePath": "staticwebassets\\images\\s3-blue.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s4-blue.png",
+      "PackagePath": "staticwebassets\\images\\s4-blue.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\s5-blue.png",
+      "PackagePath": "staticwebassets\\images\\s5-blue.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\service-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\service-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\share.png",
+      "PackagePath": "staticwebassets\\images\\share.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\slider-img.jpg",
+      "PackagePath": "staticwebassets\\images\\slider-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\telephone.png",
+      "PackagePath": "staticwebassets\\images\\telephone.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\twitter.png",
+      "PackagePath": "staticwebassets\\images\\twitter.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\js\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.4.1.min.js"
     },
     {
       "Id": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\lib\\bootstrap\\LICENSE",

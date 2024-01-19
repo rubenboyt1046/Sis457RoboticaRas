@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aD5ZOGzg9Dq2MBh2pnufVIsyzmCjsBjWbn4OFMLV/7wqsKjrTxNxMT8IQ6ISM408Ccw6zc+tizvZUcSmKS2qSw==",
+  "dgSpecHash": "+PNK9Ix5X5yHToZigdL99emmrallEDlUIB1rBkEeNVqpynk7seoCCoqXIMV537k7kc7OirOuCu58FQJUyTXjug==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\Sis457RoboticaRas.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,8 @@
     "C:\\Users\\Ruben\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\7.0.15\\microsoft.aspnetcore.mvc.razor.runtimecompilation.7.0.15.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\microsoft.build\\17.3.2\\microsoft.build.17.3.2.nupkg.sha512",

@@ -58,7 +58,7 @@ namespace Sis457RoboticaRas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdUsuario,IdEmpleado,Usuario1")] Usuario usuario)
         {
-            if (!string.IsNullOrEmpty(usuario.Usuario1)
+            if (!string.IsNullOrEmpty(usuario.Usuario1))
             {
                 usuario.Clave = Util.Encrypt("123456");
                 usuario.UsuarioRegistro = User.Identity?.Name;

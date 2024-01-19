@@ -21,7 +21,7 @@ namespace Sis457RoboticaRas.Controllers
         // GET: VentaDetalles
         public async Task<IActionResult> Index()
         {
-            var roboticaRasContext = _context.VentaDetalles.Include(v => v.IdProductoNavigation).Include(v => v.IdVentaNavigation);
+            var roboticaRasContext = _context.VentaDetalles.Include(v => v.IdVentaNavigation);
             return View(await roboticaRasContext.ToListAsync());
         }
 
@@ -34,7 +34,7 @@ namespace Sis457RoboticaRas.Controllers
             }
 
             var ventaDetalle = await _context.VentaDetalles
-                .Include(v => v.IdProductoNavigation)
+                //.Include(v => v.IdProductoNavigation)
                 .Include(v => v.IdVentaNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ventaDetalle == null)
