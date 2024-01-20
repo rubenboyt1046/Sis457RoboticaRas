@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "91L235h3XqAd/yZqBJPQT7tATHBwE5lKjMV2sIPdg7c=",
+  "Hash": "OJjmPYioPJ2+qxKH14OvbA0nOARzYYTEA6e5JDDoJ3g=",
   "Source": "Sis457RoboticaRas",
   "BasePath": "_content/Sis457RoboticaRas",
   "Mode": "Default",
@@ -782,12 +782,12 @@
       "OriginalItemSpec": "wwwroot\\images\\share.png"
     },
     {
-      "Identity": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\slider-img.jpg",
+      "Identity": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\slider1.jpg",
       "SourceId": "Sis457RoboticaRas",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\",
       "BasePath": "_content/Sis457RoboticaRas",
-      "RelativePath": "images/slider-img.jpg",
+      "RelativePath": "images/slider1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -796,7 +796,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\slider-img.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\slider1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\slider2.jpg",
+      "SourceId": "Sis457RoboticaRas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\",
+      "BasePath": "_content/Sis457RoboticaRas",
+      "RelativePath": "images/slider2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\slider2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\slider3.jpg",
+      "SourceId": "Sis457RoboticaRas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\",
+      "BasePath": "_content/Sis457RoboticaRas",
+      "RelativePath": "images/slider3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\slider3.jpg"
     },
     {
       "Identity": "C:\\Users\\Ruben\\Desktop\\Sis457RoboticaRas\\Sis457RoboticaRas\\wwwroot\\images\\telephone.png",
