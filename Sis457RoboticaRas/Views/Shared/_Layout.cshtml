@@ -18,68 +18,65 @@
     <link href="~/css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="~/css/responsive.css" rel="stylesheet" />
-    
-</head> 
-<body>
-<div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <img src="~/images/logo.png" alt="">
-            <span>
-              ASRRobotics
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a asp-controller="Home" asp-action="Index" class="nav-link active">Inicio <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-              <a asp-controller="Productos" asp-action="Index" class="nav-link">Productos</a>
-              </li>
-              <li class="nav-item">
-              <a asp-controller="Clientes" asp-action="Index" class="nav-link">Clientes</a>
-              </li>
-              <li class="nav-item">
-              <a asp-controller="Categoriums" asp-action="Index" class="nav-link">Categorias</a>
-              </li>
-              <li class="nav-item">
-              <a asp-controller="Ventums" asp-action="Index" class="nav-link">Ventas</a>
-              </li>
-              <li class="nav-item">
-              <a asp-controller="VentaDetalles" asp-action="Index" class="nav-link">Detalle Ventas</a>
-              </li>
-              </ul>
+</head>
+<body>
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="~/images/logo.png" alt="">
+                        <span>
+                            ASRRobotics
+                        </span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+                            <ul class="navbar-nav  ">
+                                <li class="nav-item active">
+                                    <a asp-controller="Home" asp-action="Index" class="nav-link active">Inicio <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Productos" asp-action="Index" class="nav-link">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Clientes" asp-action="Index" class="nav-link">Clientes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Categoriums" asp-action="Index" class="nav-link">Categorias</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Empleados" asp-action="Index" class="nav-link">Empleados</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Usuarios" asp-action="Index" class="nav-link">Usuarios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-controller="Ventums" asp-action="Index" class="nav-link">Ventas</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="quote_btn-container  d-flex justify-content-center">
+                            <a href="">
+                                <img src="~/images/call.png" alt="">
+                                CALL : +01 1234567890
+                            </a>
+                            <a asp-controller="Ventums" asp-action="Index" class="nav-link">Iniciar Sesión</a>
+                        </div>
+                    </div>
+                </nav>
             </div>
-            <div class="quote_btn-container  d-flex justify-content-center">
-              <a href="">
-                <img src="~/images/call.png" alt="">
-                CALL : +01 1234567890
-              </a>
-              <a href="">
-                <span>
-                  
-                </span>
-                demo@gmail.com
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-        <!-- end header section -->             
-    
-    @RenderBody()
-    <!-- footer section -->
+        </header>
+        <!-- end header section -->
+        @RenderBody()
+        <!-- footer section -->
         <!-- info section -->
         <section class="info_section layout_padding">
             <div class="container">
@@ -113,17 +110,16 @@
                 </div>
             </div>
         </section>
-    <section class="container-fluid footer_section">
-        <p>
-            &copy; 2019 All Rights Reserved By
-            <a href="https://html.design/">Free Html Templates</a>
-        </p>
-    </section>
-    <!-- footer section -->
-
-  <!-- end info_section -->     
-    <script type="text/javascript" src="~/js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="~/js/bootstrap.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <section class="container-fluid footer_section">
+            <p>
+                &copy; 2019 All Rights Reserved By
+                <a href="https://html.design/">Free Html Templates</a>
+            </p>
+        </section>
+        <!-- footer section -->
+        <!-- end info_section -->
+        <script type="text/javascript" src="~/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="~/js/bootstrap.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

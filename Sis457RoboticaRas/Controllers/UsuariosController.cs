@@ -60,7 +60,7 @@ namespace Sis457RoboticaRas.Controllers
         {
             if (!string.IsNullOrEmpty(usuario.Usuario1))
             {
-                usuario.Clave = Util.Encrypt("123456");
+                usuario.Clave = Util.Encrypt("654321");
                 usuario.UsuarioRegistro = User.Identity?.Name;
                 usuario.FechaRegistro = DateTime.Now;
                 usuario.Estado = 1;

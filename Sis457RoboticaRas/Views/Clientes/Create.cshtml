@@ -4,40 +4,44 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container-fluid my-3">
+    <div class="container">
+        <h1>Crear Cliente</h1>
 
-<h1>Crear Cliente</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label">RazonSocial</label>
+                        <input asp-for="RazonSocial" class="form-control" />
+                        <span asp-validation-for="RazonSocial" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Cedula Identidad</label>
+                        <input asp-for="CedulaIdentidad" class="form-control" />
+                        <span asp-validation-for="CedulaIdentidad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Celular</label>
+                        <input asp-for="Celular" class="form-control" />
+                        <span asp-validation-for="Celular" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Crear" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label class="control-label">RazonSocial</label>
-                <input asp-for="RazonSocial" class="form-control" />
-                <span asp-validation-for="RazonSocial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Cedula Identidad</label>
-                <input asp-for="CedulaIdentidad" class="form-control" />
-                <span asp-validation-for="CedulaIdentidad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Celular</label>
-                <input asp-for="Celular" class="form-control" />
-                <span asp-validation-for="Celular" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary" />
-            </div>
-        </form>
+        <div>
+            <a asp-action="Index">Volver</a>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Volver</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
