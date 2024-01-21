@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Sis457RoboticaRas.Models;
 
@@ -8,6 +9,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddDbContext<RoboticaRasContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options => options.LoginPath = new PathString("/Account/Login"));
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -21,6 +27,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseCookiePolicy();
+app.UseSession();
+app.UseAuthentication();
 
 app.UseRouting();
 

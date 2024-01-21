@@ -68,7 +68,14 @@
                                 <img src="~/images/call.png" alt="">
                                 CALL : +01 1234567890
                             </a>
-                            <a asp-controller="Ventums" asp-action="Index" class="nav-link">Iniciar Sesión</a>
+                            @if (User.Identity?.IsAuthenticated == false)
+                            {
+                                <a asp-controller="Account" asp-action="Login" style="color: wheat">Iniciar Sesión</a>
+                            }
+                            else
+                            {
+                                @await Html.PartialAsync("_LogoutPartial")
+                            }
                         </div>
                     </div>
                 </nav>
