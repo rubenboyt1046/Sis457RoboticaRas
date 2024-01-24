@@ -7,74 +7,34 @@
 
 <h1>Productos</h1>
 
-<p>
-    <a asp-action="Create">Crear Nuevo</a>
-</p>
-<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th>
-                Codigo
-            </th>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Url Imagen
-            </th>
-            <th>
-                Descripcion
-            </th>
-            <th>
-                Precio
-            </th>
-            <th>
-                Usuario Registro
-            </th>
-            <th>
-                Fecha Registro
-            </th>
-            <th>
-                Estado
-            </th>
-          
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UrlImagen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioRegistro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaRegistro)
-            </td>
-            <td>
-                @(item.Estado == 1 ? "Activo" : "Inactivo")
-            </td>
+
+<div class="container-fluid my-3">
+    <div class="container">
+        <p>
+            <a asp-action="Create">Crear Nuevo</a>
+        </p>
+        <div class="row">
             
-            <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdProducto">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdProducto">Ver</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdProducto">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <br />
+            @foreach (var item in Model)
+            {
+                <div class="card" style="width: 23rem;">
+                    <a asp-action="Details" asp-route-id="@item.IdProducto">
+                        <img src="@item.UrlImagen" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Nombre</h5>
+                            <p class="card-text">Precio: @item.Precio Bs.</p>
+                            
+                            <a asp-action="Edit" asp-route-id="@item.IdProducto">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.IdProducto">Ver</a> |
+                            <a asp-action="Delete" asp-route-id="@item.IdProducto">Eliminar</a>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+  
+
+    

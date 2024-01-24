@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using Sis457RoboticaRas.Models;
 
 namespace Sis457RoboticaRas.Controllers
 {
+    [Authorize]
     public class VentumsController : Controller
     {
         private readonly RoboticaRasContext _context;
@@ -21,7 +23,7 @@ namespace Sis457RoboticaRas.Controllers
         // GET: Ventums
         public async Task<IActionResult> Index()
         {
-            var roboticaRasContext = _context.Venta.Include(v => v.IdClienteNavigation).Include(v => v.IdUsuarioNavigation);
+            var roboticaRasContext = _context.Venta.Where(x => x.Estado != -1).Include(v => v.IdClienteNavigation).Include(v => v.IdUsuarioNavigation);
             return View(await roboticaRasContext.ToListAsync());
         }
 
@@ -48,8 +50,17 @@ namespace Sis457RoboticaRas.Controllers
         // GET: Ventums/Create
         public IActionResult Create()
         {
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "Id", "Id");
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario");
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios.Where(x => x.Estado != -1 && x.Estado != 0).Select(x => new
+            {
+                x.IdUsuario,
+                Nombre = $"{x.Usuario1}"
+            }).ToList(), "IdUsuario", "Nombre");
+
+            ViewData["IdCliente"] = new SelectList(_context.Clientes.Where(x => x.Estado != -1 && x.Estado != 0).Select(x => new
+            {
+                x.Id,
+                Nombre = $"{x.RazonSocial}"
+            }).ToList(), "Id", "Nombre");
             return View();
         }
 
@@ -60,11 +71,15 @@ namespace Sis457RoboticaRas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdUsuario,IdCliente,TotalVenta,FechaVenta,UsuarioRegistro,FechaRegistro,Estado")] Ventum ventum)
         {
-            if (ModelState.IsValid)
+            if (!int.IsEvenInteger(ventum.IdCliente) || !int.IsEvenInteger(ventum.IdUsuario))
             {
+                ventum.UsuarioRegistro = User.Identity?.Name;
+                ventum.FechaRegistro = DateTime.Now;
+                ventum.Estado = 1;
                 _context.Add(ventum);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return NotFound();
+                //return RedirectToAction(nameof(Index));
             }
             ViewData["IdCliente"] = new SelectList(_context.Clientes, "Id", "Id", ventum.IdCliente);
             ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", ventum.IdUsuario);
@@ -84,8 +99,8 @@ namespace Sis457RoboticaRas.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "Id", "Id", ventum.IdCliente);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", ventum.IdUsuario);
+            ViewData["IdCliente"] = new SelectList(_context.Clientes, "Id", "RazonSocial", ventum.IdCliente);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "Usuario1", ventum.IdUsuario);
             return View(ventum);
         }
 
@@ -105,6 +120,8 @@ namespace Sis457RoboticaRas.Controllers
             {
                 try
                 {
+
+                    ventum.UsuarioRegistro = User.Identity?.Name; 
                     _context.Update(ventum);
                     await _context.SaveChangesAsync();
                 }
@@ -158,7 +175,9 @@ namespace Sis457RoboticaRas.Controllers
             var ventum = await _context.Venta.FindAsync(id);
             if (ventum != null)
             {
-                _context.Venta.Remove(ventum);
+                ventum.Estado = -1;
+                ventum.UsuarioRegistro = User.Identity?.Name ?? "";
+                //_context.Venta.Remove(ventum);
             }
             
             await _context.SaveChangesAsync();

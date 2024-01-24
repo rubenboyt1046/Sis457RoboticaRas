@@ -23,5 +23,8 @@ public partial class VentaDetalle
 
     public short Estado { get; set; }
 
+    public virtual Producto IdProductoNavigation { get; set; } = null!;
+
     public virtual Ventum IdVentaNavigation { get; set; } = null!;
+
 }

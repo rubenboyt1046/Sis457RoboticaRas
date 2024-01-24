@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Sis457RoboticaRas.Models.Producto>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <!-- slider section -->
@@ -186,7 +188,7 @@
     <div class="container">
         <div class="custom_heading-container">
             <h2>
-                Portfolio
+                PRODUCTOS
             </h2>
             <hr>
         </div>
@@ -194,61 +196,22 @@
             There are many variations of passages of Lorem Ipsum available, but the majority
         </p>
         <div class="layout_padding2-top">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="img-box">
-                        <img src="~/images/p-1.jpg" alt="">
-                        <a href="">
-                            <img src="~/images/link.png" alt="">
-                        </a>
+            foreach (var item in Model) 
+            {
+            <div class="card" style="width: 23rem;">                
+                    <img src="item.UrlImagen" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">item.Nombre</h5>
+                        <p class="card-text">Precio: item.Precio Bs.</p>                        
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="img-box">
-                        <img src="~/images/p-2.jpg" alt="">
-                        <a href="">
-                            <img src="~/images/link.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="img-box">
-                        <img src="~/images/p-3.jpg" alt="">
-                        <a href="">
-                            <img src="~/images/link.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="img-box">
-                        <img src="~/images/p-4.jpg" alt="">
-                        <a href="">
-                            <img src="~/images/link.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="img-box">
-                        <img src="~/images/p-5.jpg" alt="">
-                        <a href="">
-                            <img src="~/images/link.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="img-box">
-                        <img src="~/images/p-6.jpg" alt="">
-                        <a href="">
-                            <img src="~/images/link.png" alt="">
-                        </a>
-                    </div>
-                </div>
+                
             </div>
+            }
         </div>
     </div>
-</section>  -->
+</section>  
 
-<!-- end portfolio section -->
+ end portfolio section -->
 <!-- news section -->
 <!--
  <section class="news_section layout_padding">

@@ -43,6 +43,8 @@
                                 <li class="nav-item active">
                                     <a asp-controller="Home" asp-action="Index" class="nav-link active">Inicio <span class="sr-only">(current)</span></a>
                                 </li>
+                                @if (User.Identity?.IsAuthenticated == true)
+                                {
                                 <li class="nav-item">
                                     <a asp-controller="Productos" asp-action="Index" class="nav-link">Productos</a>
                                 </li>
@@ -61,12 +63,14 @@
                                 <li class="nav-item">
                                     <a asp-controller="Ventums" asp-action="Index" class="nav-link">Ventas</a>
                                 </li>
+                                }
                             </ul>
+
                         </div>
                         <div class="quote_btn-container  d-flex justify-content-center">
                             <a href="">
                                 <img src="~/images/call.png" alt="">
-                                CALL : 70329516
+                                CALL: 70329516    
                             </a>
                             @if (User.Identity?.IsAuthenticated == false)
                             {
@@ -111,7 +115,7 @@
                 </div>
                 <div>
                     <p>
-                        ASR-ROBOTIC es la mayor tienda multinacional de bolivia y almacenes de descuento en todo bolivia.
+                        ASR-ROBOTIC es la mayor tienda multinacional de Bolivia y almacenes de descuento en todo bolivia.
                         La compañía comenzó con una tienda en 2022 en Sucre (Bolivia) donde actualmente 
                         tiene su sede. En 2023, existen alrededor de 5 tiendas pertenecientes a ASR-ROBOTIC 
                         en más de 4 departamentos.
@@ -130,7 +134,7 @@
         <script type="text/javascript" src="~/js/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="~/js/bootstrap.js"></script>
         @await RenderSectionAsync("Scripts", required: false)
-          
+    </div>      
         </body>
         </html>
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using Sis457RoboticaRas.Models;
 
 namespace Sis457RoboticaRas.Controllers
 {
+    [Authorize]
     public class VentaDetallesController : Controller
     {
         private readonly RoboticaRasContext _context;
@@ -21,7 +23,7 @@ namespace Sis457RoboticaRas.Controllers
         // GET: VentaDetalles
         public async Task<IActionResult> Index()
         {
-            var roboticaRasContext = _context.VentaDetalles.Include(v => v.IdVentaNavigation);
+            var roboticaRasContext = _context.VentaDetalles.Where(x => x.Estado != -1).Include(v => v.IdProductoNavigation).Include(v => v.IdVentaNavigation);
             return View(await roboticaRasContext.ToListAsync());
         }
 
@@ -34,7 +36,7 @@ namespace Sis457RoboticaRas.Controllers
             }
 
             var ventaDetalle = await _context.VentaDetalles
-                //.Include(v => v.IdProductoNavigation)
+                .Include(v => v.IdProductoNavigation)
                 .Include(v => v.IdVentaNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ventaDetalle == null)
@@ -49,6 +51,15 @@ namespace Sis457RoboticaRas.Controllers
         public IActionResult Create()
         {
             ViewData["IdVenta"] = new SelectList(_context.Venta, "Id", "Id");
+
+            //ViewData["IdProducto"] = new SelectList(_context.Productos.Where(x => x.Estado != -1 && x.Estado != 0).Select(x => new
+            //{
+               // x.IdProducto,
+               // Nombre = $"{x.IdProducto}"
+            //}).ToList(), "IdProducto", "Nombre");                      
+
+            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "Nombre");
+            
             return View();
         }
 
@@ -57,15 +68,21 @@ namespace Sis457RoboticaRas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdVenta,IdProducto,Cantidad,PrecioUnitario,Total,UsuarioRegistro,FechaRegistro,Estado")] VentaDetalle ventaDetalle)
+        public async Task<IActionResult> Create([Bind("Id,IdVenta,IdProducto,Cantidad,PrecioUnitario,Total")] VentaDetalle ventaDetalle)
         {
-            if (ModelState.IsValid)
+            if (!int.IsEvenInteger(ventaDetalle.IdVenta) || !int.IsEvenInteger(ventaDetalle.IdProducto))
             {
+                ventaDetalle.UsuarioRegistro = User.Identity?.Name;
+                ventaDetalle.FechaRegistro = DateTime.Now;
+                ventaDetalle.Estado = 1;
+               
                 _context.Add(ventaDetalle);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdVenta"] = new SelectList(_context.Venta, "Id", "Id", ventaDetalle.IdVenta);
+            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "IdProducto", ventaDetalle.IdProducto);
+            ViewData["IdVenta"] = new SelectList(_context.Venta, "Id", "Id", ventaDetalle.IdVenta);           
+
             return View(ventaDetalle);
         }
 
@@ -82,6 +99,7 @@ namespace Sis457RoboticaRas.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "Nombre", ventaDetalle.IdProducto);
             ViewData["IdVenta"] = new SelectList(_context.Venta, "Id", "Id", ventaDetalle.IdVenta);
             return View(ventaDetalle);
         }
@@ -102,6 +120,7 @@ namespace Sis457RoboticaRas.Controllers
             {
                 try
                 {
+                    ventaDetalle.UsuarioRegistro = User.Identity?.Name;
                     _context.Update(ventaDetalle);
                     await _context.SaveChangesAsync();
                 }
@@ -118,6 +137,7 @@ namespace Sis457RoboticaRas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "IdProducto", ventaDetalle.IdProducto);
             ViewData["IdVenta"] = new SelectList(_context.Venta, "Id", "Id", ventaDetalle.IdVenta);
             return View(ventaDetalle);
         }
@@ -131,6 +151,7 @@ namespace Sis457RoboticaRas.Controllers
             }
 
             var ventaDetalle = await _context.VentaDetalles
+                .Include(v => v.IdProductoNavigation)
                 .Include(v => v.IdVentaNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ventaDetalle == null)
@@ -153,7 +174,9 @@ namespace Sis457RoboticaRas.Controllers
             var ventaDetalle = await _context.VentaDetalles.FindAsync(id);
             if (ventaDetalle != null)
             {
-                _context.VentaDetalles.Remove(ventaDetalle);
+                ventaDetalle.Estado = -1;
+                ventaDetalle.UsuarioRegistro = User.Identity?.Name ?? "";
+                //_context.VentaDetalles.Remove(ventaDetalle);
             }
             
             await _context.SaveChangesAsync();

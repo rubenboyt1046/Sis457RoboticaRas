@@ -6,7 +6,7 @@
 <div class="container-fluid my-3">
     <div class="container">
         <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" role="form">
-            <div class="font-weght-bold">Iniciar Sesión</div>
+            
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="usuario" class="control-label"></label>
@@ -23,7 +23,8 @@
                     <input type="checkbox" name="recordarme" id="recordarme" />
                     <label for="recordarme">Recordarme</label>
                 </div>
-                <div class="col-xs-5">
+                <br />
+                <div class="row" style="margin-top:50px;">
                     <input type="submit" value="Iniciar Sesión" class="btn btn-primary" />
                 </div>
             </div>
