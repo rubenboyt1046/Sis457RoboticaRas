@@ -4,51 +4,54 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container-fluid my-3">
+    <div class="container">
+        <h1>Detalles Cliente</h1>
 
-<h1>Detalles Cliente</h1>
-
-<div>   
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            Razon Social
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RazonSocial)
-        </dd>
-        <dt class = "col-sm-2">
-            Cedula Identidad
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CedulaIdentidad)
-        </dd>
-        <dt class = "col-sm-2">
-            Celular
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Celular)
-        </dd>
-        <dt class = "col-sm-2">
-            Usuario Registro
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioRegistro)
-        </dd>
-        <dt class = "col-sm-2">
-            Fecha Registro
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.FechaRegistro.ToLongDateString()
-        </dd>
-        <dt class = "col-sm-2">
-            Estado
-        </dt>
-        <dd class = "col-sm-10">
-            @(Model.Estado == 1 ? "Activo" : "Inactivo")
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-    <a asp-action="Index">Volver</a>
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Razon Social
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.RazonSocial)
+                </dd>
+                <dt class="col-sm-2">
+                    Cedula Identidad
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CedulaIdentidad)
+                </dd>
+                <dt class="col-sm-2">
+                    Celular
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Celular)
+                </dd>
+                <dt class="col-sm-2">
+                    Usuario Registro
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UsuarioRegistro)
+                </dd>
+                <dt class="col-sm-2">
+                    Fecha Registro
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.FechaRegistro.ToLongDateString()
+                </dd>
+                <dt class="col-sm-2">
+                    Estado
+                </dt>
+                <dd class="col-sm-10">
+                    @(Model.Estado == 1 ? "Activo" : "Inactivo")
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+            <a asp-action="Index">Volver</a>
+        </div>
+    </div>
 </div>
